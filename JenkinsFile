@@ -1,0 +1,9 @@
+pipeline { 
+    agent any    
+    stages { 
+        stage('Ejecucion de pruebas') {  
+            steps { 
+                bat "newman run prueba.json"
+            } 
+        } 
+    } 
