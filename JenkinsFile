@@ -3,6 +3,7 @@ pipeline {
     stages { 
         stage('Ejecucion de pruebas') {  
             steps { 
+                bat "npm install"
                 bat "newman run prueba.json"
             } 
         } 
