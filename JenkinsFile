@@ -4,12 +4,12 @@ pipeline {
         stage('Ejecucion de pruebas') {  
             steps { 
                 bat "npm install"
-                bat "newman run prueba.json -r htmlextra --reporter-htmlextra-export 'index.html'"
+                bat "newman run prueba.json -r htmlextra --reporter-htmlextra-export index.html"
             } 
         }
 		stage('Publicar reporte') {
 			steps{
-				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'Reporte de Ejecucion', reportTitles: ''])
 			}
 		}	
     } 
