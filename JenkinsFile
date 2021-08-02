@@ -9,7 +9,7 @@ pipeline {
         }
 		stage('Publicar reporte') {
 			steps{
-				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'newman', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
 			}
 		}	
     } 
