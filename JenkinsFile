@@ -4,7 +4,7 @@ pipeline {
         stage('Ejecucion de pruebas') {  
             steps { 
                 bat "npm install"
-                bat "newman run prueba.json -r htmlextra"
+                bat "newman run prueba.json -r htmlextra --reporter-htmlextra-export 'index.html'"
             } 
         }
 		stage('Publicar reporte') {
