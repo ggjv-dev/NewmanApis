@@ -3,12 +3,12 @@ pipeline {
     stages { 
         stage('Ejecucion de pruebas') {  
             steps { 
-                sh "newman run prueba.json -r htmlextra"
+                sh "newman run prueba.json -r htmlextra --reporter-htmlextra-export index.html"
             } 
         }
 		stage('Publicar reporte') {
 			steps{
-				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: '*.html', reportName: 'Reporte de Ejecucion', reportTitles: ''])
+				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'Reporte de Ejecucion', reportTitles: ''])
 			}
 		}	
     } 
